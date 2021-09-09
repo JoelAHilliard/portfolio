@@ -1,0 +1,177 @@
+<!--(API-KEY)UKuKVODHtXUha44yRjuaT8De1h6fWLb08EJ0beCl!--> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>AJAX</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="styleajax.css" />
+</head>
+<body>
+    <a id="backButton" href="jahm6vFlexBoxF20.html">Back</a>
+    <div id="pageTitle"><h1>Find the aliens!</h1><hr></div>
+<div id="mainWrapper">
+    <div id="formBox">
+        <div id="formTitle">
+            <h1>Please enter data here!</h1>
+        </div>
+        <form>
+            <label for="sol">Martian Sol:</label>
+            <input type="number" id='sol' name="sol" />
+            <br>
+            <br>
+            <label for="pictureOptions">Camera:</label>
+            <select name="pictureOptions" id="pictureOptions">
+                
+            </select>
+            <div id="submitButton">
+                <p onclick="queryAPI()">Query API</p>
+            </div>
+        <hr>
+        <label id="chooseARover">Choose a rover to find out more!</label>
+        <select id='roverOptions'>
+            <option value="clear" selected>Click Here!</option>
+            <option value="curiosity">Curiosity</option>
+            <option value="opportunity">Opportunity</option>
+            <option value="spirit">Spirit</option>
+        </select>
+            <button type="button" onclick="showData()">Apply</button>
+        <hr>
+        <div id="roverInfo">
+            <p id='roverName'></p>
+            <p id='roverLaunch'></p>
+            <p id='roverText'></p>
+        </div>
+        </form>
+    </div>
+    <h2 id="loading">Loading...</h2>
+    <div id="pictureBox">
+        <div id="pictureBoxTitle">
+        <h1>Going Rover!</h1>
+        </div>
+        <div id="imageArea">
+            <div id=imageLanding>
+
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function showData(){
+        var resp;
+        var data;
+        var URL = "https://www.professorwergeles.com/webService.php?content=data&format=xml";
+        var parser = new DOMParser();
+        var request = new XMLHttpRequest;
+        request.open('GET',URL,true);
+        request.onload = function(){
+            if(request.status==200){
+                resp = request.responseText;
+                data = parser.parseFromString(resp, "text/xml");
+                var rover = document.getElementById('roverOptions').value;
+            if(rover==='curiosity'){
+                document.getElementById("roverName").innerHTML = data.childNodes[0].children[0].children[0].innerHTML + "<hr>";
+                document.getElementById("roverLaunch").innerHTML = "Launch Date: " +
+                data.childNodes[0].children[0].children[1].innerHTML + "<hr>";
+                document.getElementById("roverText").innerHTML= data.childNodes[0].children[0].children[5].innerHTML + "<hr>";    
+            }
+            if(rover==='spirit'){
+                document.getElementById("roverName").innerHTML = data.childNodes[0].children[2].children[0].innerHTML + "<hr>";
+                document.getElementById("roverLaunch").innerHTML =  "Launch Date: " +
+                data.childNodes[0].children[2].children[1].innerHTML + "<hr>";
+                document.getElementById("roverText").innerHTML= data.childNodes[0].children[2].children[6].innerHTML + "<hr>";    
+            }
+            if(rover==='opportunity'){
+                document.getElementById("roverName").innerHTML = data.childNodes[0].children[1].children[0].innerHTML + "<hr>";
+                document.getElementById("roverLaunch").innerHTML = "Launch Date: " +
+                data.childNodes[0].children[1].children[1].innerHTML + "<hr>";
+                document.getElementById("roverText").innerHTML= data.childNodes[0].children[1].children[6].innerHTML + "<hr>";    
+            }
+            if(rover==='clear'){
+                document.getElementById("roverName").innerHTML = '';
+                document.getElementById("roverLaunch").innerHTML = '';
+                document.getElementById("roverText").innerHTML= '';  
+            }
+            }
+        };
+        request.send();
+    }
+    function loading(){
+        document.getElementById('loading').style.visibility = 'visible';
+    }
+    function loaded(){
+                document.getElementById('loading').style.visibility = 'hidden';
+
+    }
+    function addPhotos(resp,camName){
+        if(camName==='Mast'){
+            camName = 'Mast Camera';
+        } else if(camName ==='Mars'){
+            camName = 'Mars Hand Lens Imager';
+        } else if(camName ==='Navigation'){
+            camName = 'Navigation Camera';
+        } else if(camName==='Rear'){
+            camName = 'Rear Hazard Avoidance Camera';
+        } else if(camName==='Chemistry'){
+            camName = 'Chemistry and Camera Complex';
+        } else if(camName==='Front'){
+            camName = 'Front Hazard Avoidance Camera';
+        }
+        var imgHandler = document.getElementById('imageLanding');
+        imgHandler.innerHTML = '';
+        var photos = [];
+        for(var i =0;i<resp.photos.length;i++){
+             if(resp.photos[i].camera.full_name === camName){
+                photos[i] = resp.photos[i].img_src;
+             }
+        }
+        for(var i =0;i<photos.length;i++){
+                if(photos[i]!=undefined){
+                console.log("adding...");
+                imgHandler.innerHTML += "<img alt='space' src=" + photos[i] +"></img>";
+                }
+            }
+    }
+    function queryAPI(){
+        loading();
+        var camName = document.getElementById("pictureOptions").value;
+        if(document.getElementById('sol').value == ''){
+            window.alert("You must enter a 'Sol' numer");
+            return;
+        }
+        var sols = document.getElementById('sol').value;
+        var URL = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol="+ sols +"&api_key=UKuKVODHtXUha44yRjuaT8De1h6fWLb08EJ0beCl";
+        var request = new XMLHttpRequest;
+        request.open('GET',URL,true);
+        request.onload = function(){
+            if(request.status == 200){
+            var resp = request.response;
+            var ret = updateMenu(JSON.parse(resp));
+                if(ret!=1){
+                addPhotos(JSON.parse(resp),camName);
+                }
+                loaded();
+            }
+         };
+        request.send();
+    }
+    function updateMenu(resp){
+        var cams = new Array(resp.photos.length);
+        var camOptions = document.getElementById('pictureOptions');
+        camOptions.innerHTML = '';
+        if(cams==0){
+            window.alert("No camera available");
+            return 1;
+        }
+        for(var i=0;i<resp.photos.length;i++){
+            cams[i] = resp.photos[i].camera.full_name;
+        }
+        var unique = new Set(cams);
+        var iterator = unique.values();
+        for(var j=0;j<unique.size;j++){
+            var temp = iterator.next().value;
+            camOptions.innerHTML += '<option value='+temp+'>'+temp+'</select>';
+        }
+    }
+    </script>
+</body>
+</html>

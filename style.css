@@ -1,0 +1,443 @@
+.navBarText:hover{
+    text-decoration: underline;
+}
+.navBarText:visited{
+    color:grey;
+}
+.navBarText:active{
+    color:orange;
+}
+.dark-mode {
+    color:white;
+    background-color: black;
+    border-color: white;
+}
+.navBarText {
+    color:white;
+}
+#resetValues{
+    text-align: center;
+}
+.topButtonsList img {
+    margin-right: 10px;
+    margin-top: 20px;
+    height: 50px;
+    width: 50px;
+}
+.topButtonsList h3{
+    margin-left: 10px;
+}
+.topButtonsList {
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: -25px;
+    display: flex;
+    flex-direction: row;
+}
+.bodyToDoList {
+    color:black;
+    background-color: lightblue;
+    
+}
+#priorityNums{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+#priorityHeaders span {
+    font-size: 20px;
+}
+#priorityHeaders {
+    text-align: center;
+    font-family: 'Bebas Neue', sans-serif;
+    width: 100%;
+    
+}
+#priorityArea {
+    width: 100%; 
+}
+#toDoName, #toDoType, #priorityRange, #dueDate {
+    height: 35px;
+    margin: 10px;
+}
+#inputOptions {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+}
+#buttonContainer {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+#listActual img {
+    height: 100%;
+    border: 5px solid black;
+}
+#listActual div {
+    line-height: 50px;
+    display: flex;
+    justify-content: center;
+    width: 20%;
+}
+#listActual {
+    border-top: 5px solid black;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+.toDoList span {
+    font-size: 25px;
+}
+li div {
+    border-left: 3px solid grey;
+    border-right: 3px solid grey;
+}
+li{
+    height: 50px;
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    background-color: grey;
+    width: 100%;
+}
+button {
+    margin: 5px;
+    text-align: center;
+    border: 3px solid black;
+}
+#listEditor h5 {
+    font-family: 'Bebas Neue', cursive;
+    text-align: center;
+}
+#listEditor {
+    background-color: grey;
+    margin: auto;
+    border: 5px solid white;
+    margin-top: 15px;
+    width: 60%;
+    min-height: 150px;
+    height: auto;
+    margin-bottom: 15px;
+}
+.listHeader span{
+    font-family: 'Bebas Neue', cursive;
+    font-size: 25px;
+    text-align: center;
+    display: inline-block;
+    width: 20%;
+    border-bottom: 3px solid black;
+}
+.listHeader {
+    background-color: lightgray;
+    position: relative;
+    vertical-align: middle;
+    display: flex;
+    flex-direction: row;
+}
+#titleList{
+    text-align: center;    
+    font-size: 45px;
+    font-family: 'Bebas Neue', cursive; 
+}
+#toDoListContainer {
+    background-color: grey;
+    overflow-y: scroll;
+    vertical-align: middle;
+    margin: auto;
+    width: 90%;
+    height: 600px;
+    border: 5px solid white;
+}
+.cake{
+    padding-top: 15px;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 22px;
+    width: 40%;
+    float: left;
+    text-align:center;
+}
+.navBarSpacer {
+    top: 0;
+    left: 0;
+    background-color: black;
+    width: 100%;
+    min-height: 74px;
+    height: auto;
+}
+.mainCardContainer img{
+    float: left;
+    height: 100%;
+    width: 60%;
+    overflow: hidden;
+    border-right: 5px solid black;
+}
+.mainCardContainer {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    width: 90%;
+    position: relative;
+    height: auto;
+    min-height: 300px;
+    margin-top:100px;
+    flex-wrap: wrap-reverse;
+}
+#card1,#card2,#card3 {
+    background-color: whitesmoke;
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    position: relative;
+    border-style: groove;
+    border-radius: 50px;
+    box-shadow: 5px 7px grey;
+    border: 4px solid black;
+    width: 400px;
+    height: 250px;
+}
+.navText {
+    padding-top: 8px;
+    padding-left: 30px;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 35px;
+}
+span{
+    font-size: 11px;
+}
+.cardColThree {
+    padding: 5px;
+    margin: auto;
+    height: 100%;
+    text-align: center;
+    font-family: 'Roboto Mono',monospace,sans-serif;
+    display: inline-block;
+    width: 33%;
+}
+.cardColTwo{
+        padding: 5px;
+    margin: auto;
+    height: 100%;
+    text-align: center;
+    font-family: 'Roboto Mono',monospace,sans-serif;
+    display: inline-block;
+    width: 33%;
+}
+#cssCardHeadShot{
+    margin: 1px;
+    height: 140px;
+    border: 5px solid black;
+    display: inline-block;
+}
+.cardColOne {
+    padding: 5px;
+    margin: auto;
+    display: inline-block;
+    text-align: center;
+    vertical-align: top;
+    width: 30%;
+    height: 100%;
+}
+#cssCard {
+    box-shadow: 5px 5px;
+    margin: auto;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    border: 5px solid black;
+    width:600px;
+    height: 160px;
+}
+#compSci{
+    color: white;
+    background-color: black;
+}
+#infoTech{
+    background-color: gold;
+}
+#math{
+    background-color: slategray;
+}
+.schoolText {
+    font-size: 35px;
+    text-align: right;
+}
+.rightBorder {
+    border-right:5px solid black;
+}
+#tableHeaderText {
+    border-right: 5px solid black;
+    text-align: center;
+}
+#mainTable{
+    font-family: 'Roboto Mono', monospace, sans-serif;
+    border:5px solid black;
+    width:99%;
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 105px;
+}
+th#mainTable {
+    border-top: 5px solid black;
+    padding: 10px;
+    padding-right: 50px;
+}
+tbody#mainTable{    
+    border:5px solid black;
+}
+.columnOne {
+    padding: 10px;
+    padding-right: 50px;
+    border: 5px solid black;  
+}
+td#mainTable {
+    border-top: 5px solid black;
+    padding: 10px;
+    padding-right: 50px;
+}
+#muTiger { 
+    margin-left: 30px;
+    height: 120px;
+    width: 215px;
+}
+h2 {
+    font-size: 26px;
+    text-align: center;
+    font-family: sans-serif, fantasy;
+    color:black;
+}
+.text{
+    color:grey;
+    font-family: fantasy, sans-serif;
+    font-size: 20px;
+}
+.textStyle {
+    padding-top: 20px;
+    color:grey;
+    font-family: fantasy, sans-serif;
+    font-size: 20px;
+}
+#navBar {
+    top: 0;
+    left: 0;
+    position: fixed;
+    background-color: black;
+    width: 100%;
+    min-height: 65px;
+    height: auto;
+}
+.textColumns{
+    color:ghostwhite;
+    text-align: center;
+    font-family: sans-serif;
+}
+#mainWrapper {
+    padding:8px;
+    margin: auto;
+    width: 1128px;
+    margin-top: 100px;
+    border: 6px solid lightgrey;
+    border-radius: 100px;
+}
+#leftColumn, #rightColumn {
+    float: left;
+    padding: 18px;
+    margin: 18px;
+    height: 433px;
+    border: 7px solid grey;
+    border-radius: 100px;
+    background-color: black;
+}
+#rightColumn{
+    width: 210px;
+}
+#leftColumn{
+    width: 247px;
+}
+.rowWrapper {
+    margin: 18px;
+    float: left;
+    width: 449px;
+}
+.clear:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+#topRow, #bottomRow {
+    padding: 25px;
+    width: 375px;
+    border: 7px solid grey;
+    border-radius: 100px;
+    background-color: black;
+}
+#topRow{
+    height: 198px;   
+}
+#bottomRow{
+    margin-top: 25px;
+    height: 132px;
+}
+#profilePicture {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: auto;
+    margin-right: auto;
+    height: 250px;
+    width: 200px;
+    border: 5px solid black;
+}
+
+h3 {
+    color: gray;
+    position: relative;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.infoBody {
+    padding-top: 175px;
+    text-align: center;
+}
+.infoBody p {
+    margin-top: -15px;
+    color: dimgrey;
+    font-size: 18px;
+}
+.links {
+    vertical-align: baseline;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20%;
+    text-align: center;
+}
+#leftLink {
+    width: 75px;
+    height: 75px;
+    float: left;
+}
+#rightLink {
+    position: relative;
+    top: -94px;
+    width: 75px;
+    height: 75px;
+    float: right;
+}
+#middleLink {
+    padding-top: 25px;
+    width: 75px;
+    height: 45px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid black;
+    font-family: sans-serif;
+}
+body{
+    background-color: lightgrey;
+    vertical-align: middle;
+}

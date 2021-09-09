@@ -1,0 +1,136 @@
+#loading{
+    margin-left: -220px;
+}
+#roverInfo {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    word-wrap: break-word;
+    max-width: 350px;
+    height: 100%;
+}
+#roverName{
+    font-size: 20px;
+    text-align: center;
+}
+#roverLaunch{
+    font-size: 18px;
+}
+#chooseARover{
+    font-size: 13px;
+}
+#roverInfo > p{
+    padding: 5px;
+    text-align: left;
+    text-indent: 5px;
+    width: 95%;
+}
+#pictureBox{
+    display: flex;
+    flex-flow: column;
+    width: 90%;
+    height: 650px;
+}
+#imageArea{
+    margin-top: 25px;
+    border: 2px solid white;
+    border-radius: 20%;
+    align-self: center;
+    width: 850px;
+    height: 100%;
+    overflow: scroll;
+}
+#backButton{
+    color: white;
+    font-size: 24px;
+}
+#submitButton{
+    display: flex;
+    flex-flow: column;
+}
+#submitButton > p{
+    text-align: center;
+    width: 85px;
+    align-self: center;
+    border: 2px solid black;
+    background-color: white;
+    border-radius: 20%;
+}
+#submitButton > p:hover{
+    box-shadow: 3px 5px;
+    cursor: pointer;
+}
+body{
+    background-image: url('galaxy.jpg');
+}
+#mainWrapper{
+    background-color: grey;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    align-content: space-around;
+    width: 90%;
+    border: 2px solid white;
+    min-height: 700px;
+    min-width: 1400px;
+}
+hr {
+    max-width: 350px;
+}
+#formTitle{
+    font-size: 11px;
+    display: flex;
+    flex-direction: column;
+}
+#pageTitle{
+    display: flex;
+    flex-flow: column;
+}
+#pageTitle > h1{
+    color: white;
+    align-self: center;
+}
+#formTitle > h1{
+    align-self: center;
+}
+#formBox{
+    display: flex;
+    flex-flow: column;
+    background-color: dodgerblue;
+    margin-left: 15px;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 30%;
+    border: 2px solid white;
+    height: 550px;
+    overflow-y: scroll;
+    z-index: 1;
+}
+#formBox > form{
+    text-align: center;
+    align-self: center;
+}
+#pictureBox{
+    margin-left: 15px;
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+}
+#pictureBoxTitle {
+    margin-top: 5px;
+    display: flex;
+    flex-flow: column;
+    align-self: center;
+    width: 30%;
+    border-radius: 50%;
+    background-color: white;
+}
+#pictureBoxTitle > h1{
+    color: black;
+    align-self: center;
+}
+#loading{
+    visibility: hidden;
+}

@@ -1,0 +1,248 @@
+span{
+    font-size: 11px;
+}
+.cardColThree {
+    padding: 5px;
+    margin: auto;
+    height: 100%;
+    text-align: center;
+    font-family: 'Roboto Mono',monospace,sans-serif;
+    display: inline-block;
+    width: 33%;
+}
+.navBarText{
+    color: white;
+}
+.cardColTwo{
+    padding: 5px;
+    margin: auto;
+    height: 100%;
+    text-align: center;
+    font-family: 'Roboto Mono',monospace,sans-serif;
+    display: inline-block;
+    width: 33%;
+}
+#cssCardHeadShot{
+    margin: 1px;
+    height: 140px;
+    border: 5px solid black;
+    display: inline-block;
+}
+.navBarText:hover{
+    text-decoration: line-through;
+}
+.navBarText:active{
+    color:orange;
+}
+.navBarText:visited{
+    color:grey;
+}
+.cardColOne {
+    padding: 5px;
+    margin: auto;
+    display: inline-block;
+    text-align: center;
+    vertical-align: top;
+    width: 30%;
+    height: 100%;
+}
+#cssCard {
+    box-shadow: 5px 5px;
+    margin: auto;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    border: 5px solid black;
+    width:600px;
+    height: 160px;
+}
+#compSci{
+    color: white;
+    background-color: black;
+}
+#infoTech{
+    background-color: gold;
+}
+#math{
+    background-color: slategray;
+}
+.schoolText {
+    font-size: 35px;
+    text-align: right;
+}
+.rightBorder {
+    border-right:5px solid black;
+}
+#tableHeaderText {
+    border-right: 5px solid black;
+    text-align: center;
+}
+#mainTable{
+    font-family: 'Roboto Mono', monospace, sans-serif;
+    border:5px solid black;
+    width:99%;
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 90px;
+}
+th {
+    border-top: 5px solid black;
+    padding: 10px;
+    padding-right: 50px;
+}
+tbody{    
+    border:5px solid black;
+}
+.columnOne {
+    padding: 10px;
+    padding-right: 50px;
+    border: 5px solid black;  
+}
+td {
+    border-top: 5px solid black;
+    padding: 10px;
+    padding-right: 50px;
+}
+#muTiger { 
+    margin-left: 30px;
+    height: 120px;
+    width: 215px;
+}
+h2 {
+    font-size: 26px;
+    text-align: center;
+    font-family: sans-serif, fantasy;
+    color:black;
+}
+.text{
+    color:grey;
+    font-family: fantasy, sans-serif;
+    font-size: 20px;
+}
+.textStyle {
+    padding-top: 20px;
+    color:grey;
+    font-family: fantasy, sans-serif;
+    font-size: 20px;
+}
+#navBar {
+    top: 0;
+    left: 0;
+    position: fixed;
+    background-color: black;
+    width: 100%;
+    height: 65px;
+    margin-bottom: 105px;
+}
+.textColumns{
+    color:ghostwhite;
+    text-align: center;
+    font-family: sans-serif;
+}
+#mainWrapper {
+    padding:8px;
+    margin: auto;
+    width: 1128px;
+    margin-top: 100px;
+    border: 6px solid lightgrey;
+    border-radius: 100px;
+}
+#leftColumn, #rightColumn {
+    float: left;
+    padding: 18px;
+    margin: 18px;
+    height: 433px;
+    border: 7px solid grey;
+    border-radius: 100px;
+    background-color: black;
+}
+#rightColumn{
+    width: 210px;
+}
+#leftColumn{
+    width: 247px;
+}
+.rowWrapper {
+    margin: 18px;
+    float: left;
+    width: 449px;
+}
+.clear:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+#topRow, #bottomRow {
+    padding: 25px;
+    width: 375px;
+    border: 7px solid grey;
+    border-radius: 100px;
+    background-color: black;
+}
+#topRow{
+    height: 198px;   
+}
+#bottomRow{
+    margin-top: 25px;
+    height: 132px;
+}
+#profilePicture {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: auto;
+    margin-right: auto;
+    height: 250px;
+    width: 200px;
+    border: 5px solid black;
+}
+
+h3 {
+    color: gray;
+    position: relative;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.infoBody {
+    padding-top: 175px;
+    text-align: center;
+}
+.infoBody p {
+    margin-top: -15px;
+    color: dimgrey;
+    font-size: 18px;
+}
+.links {
+    vertical-align: baseline;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20%;
+    text-align: center;
+}
+#leftLink {
+    width: 75px;
+    height: 75px;
+    float: left;
+}
+#rightLink {
+    position: relative;
+    top: -94px;
+    width: 75px;
+    height: 75px;
+    float: right;
+}
+#middleLink {
+    padding-top: 25px;
+    width: 75px;
+    height: 45px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid black;
+    font-family: sans-serif;
+}
+body{
+    background-color: whitesmoke;
+    vertical-align: middle;
+}

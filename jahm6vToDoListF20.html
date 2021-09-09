@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+                <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+                <link rel="stylesheet" href="style.css" />
+                <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+                <meta charset="utf-8">
+        <title>To-Do List</title>
+            <script>
+                function removeFromList(itemName) {
+                    var list = document.getElementById('listActual');
+                    var child = list.querySelector('li[name = "'+itemName+'"]');
+                    list.removeChild(child);
+                }
+                function changeTheme() {
+                    if(document.body.classList.contains('dark-mode') == true){
+                        document.body.classList.remove("dark-mode");
+                        document.body.classList.add("bodyToDoList");
+                    } else {
+                    document.body.classList.remove("bodyToDoList");
+                    document.body.classList.add("dark-mode");
+                    }
+                }
+                function changeTitle() {
+                    document.getElementById("titleList").ondblclick = function() {
+                        var newTitle = prompt("Please enter a new title: ");
+                        if(newTitle==='' || newTitle==null){
+                            window.alert("Please enter valid title!");
+                            return;
+                        } else{
+                        document.getElementById("titleList").innerHTML = newTitle;
+                        }
+                    }
+                }
+                function addToList() {
+                    // Getting my input values
+                    var todaysDate = new Date();
+                    var date = document.getElementById("dueDate").value;
+                    var title = document.getElementById("toDoName").value;
+                    var type = document.getElementById("toDoType").value;
+                    var priority = document.getElementById("priorityRange").value;
+                    var action = document.createElement('img');
+                        action.src = "checkmark.png";
+                        action.href = "checkmark";
+
+                    if(title === '' || type === ''){
+                        window.alert("Please enter valid title");
+                        return;
+                    }
+                    givenDate = new Date(date);
+                    // "Set hours" strategy was found at https://stackoverflow.com/questions/8215556/how-to-check-if-input-date-is-equal-to-todays-date
+                    // Author: James Hill
+                    if(givenDate.setHours(0,0,0,0) < todaysDate.setHours(0,0,0,0)|| date==='') {
+                        window.alert('Enter a correct date!');
+                        return;
+                    }
+                    var listItem = document.createElement("li");
+                        listItem.setAttribute('name', title);
+                    // Creating Divs for each input
+
+                    var dateDiv = document.createElement('div');
+                    var titleDiv = document.createElement('div');
+                    var typeDiv = document.createElement('div');
+                    var priorityDiv = document.createElement('div');
+                    var actionDiv = document.createElement('div');
+                    //found how to pass variables onlick here =>https://stackoverflow.com/questions/9643311/pass-string-parameter-in-an-onclick-function
+                    actionDiv.setAttribute('onclick', 'removeFromList(\''+title+'\')');
+
+                    // Convert into text
+
+                    var dateNode = document.createTextNode(date);
+                    var titleNode = document.createTextNode(title);
+                    var typeNode = document.createTextNode(type);
+                    var priorityNode = document.createElement('img');
+                    if(priority==0){
+                        priorityNode.src = 'stars/5_Star_Rating_System_0_stars_T.png';
+                        priorityNode.href = '0-Stars';
+                    } else if(priority==1){
+                        priorityNode.src = 'stars/5_Star_Rating_System_1_star_T.png';
+                        priorityNode.href = '1-Star';
+                    } else if(priority==2){
+                        priorityNode.src = 'stars/5_Star_Rating_System_2_stars_T.png';
+                        priorityNode.href = '2-Star';
+                    } else if(priority==3){
+                        priorityNode.src = 'stars/5_Star_Rating_System_3_stars_T.png';
+                        priorityNode.href = '3-Star';
+                    } else if(priority==4){
+                        priorityNode.src = 'stars/5_Star_Rating_System_4_stars_T.png';
+                        priorityNode.href = '4-Star';
+                    } else if(priority==5){
+                        priorityNode.src = 'stars/5_Star_Rating_System_5_stars_T.png';
+                        priorityNode.href = '5-Star';
+                    }
+                    //Appending text to div
+
+                    dateDiv.appendChild(dateNode);
+                    titleDiv.appendChild(titleNode);
+                    typeDiv.appendChild(typeNode);
+                    priorityDiv.appendChild(priorityNode);
+                    actionDiv.appendChild(action);
+
+                    //Append divs to listItem
+
+                    listItem.appendChild(titleDiv);
+                    listItem.appendChild(typeDiv);
+                    listItem.appendChild(priorityDiv);
+                    listItem.appendChild(dateDiv);
+                    listItem.appendChild(actionDiv);
+
+
+                    document.getElementById("listActual").appendChild(listItem);
+
+                    console.log(title);
+            }
+            </script>
+    </head>
+    <body class="bodyToDoList" id="bodyToDoList">
+        <div class="topButtonsList">
+            <!--Gear img retrieved from https://www.flaticon.com/free-icon/gear_40031-->
+            <h3><a href="jahm6vFlexBoxF20.html">Back to Projects</a></h3>
+            <img onclick="changeTheme()"  id="gearIcon" src="gear.png" alt="settings" />
+
+        </div>
+        <h5 id="titleList" ondblclick="changeTitle()">To-Do List</h5>
+        <div id="toDoListContainer">
+            
+            <div class="listHeader"><span>Title</span><span>Type</span><span>Priority</span><span>Due Date</span><span>Action</span>
+            </div>
+            
+            <div class="toDoList">
+                <ul id="listActual">
+                    
+                </ul>
+            </div>
+        </div>
+        
+    <div id="listEditor">
+        <h5>Add a to-do</h5>
+            <div id="inputOptions">
+                <form method="post" action="#">
+                    
+                    Title:
+                    <input id="toDoName" name="toDoName" type="text" placeholder="To-Do..." maxlength="30">
+                    
+                        <select id="toDoType" name="toDoType" >
+                            
+                            <option value="">Please select an option</option>
+                            <option value="Study">Study for Test</option>       
+                            <option value="Homework">Homework</option>
+                            <option value="Lectures">Lectures/Notes</option>
+                            
+                        </select>
+                    
+                        <div id="priorityArea">
+                            
+                            <div id="priorityHeaders">
+                                    <span>Priority</span><span> and Due Date</span>
+                            </div>
+                            
+                            <div id="priorityNums">
+                                
+                                    <label for="priorityRange">0</label>
+                                    <input id="priorityRange"type="range" min="0" max="5" name="priorityRange">
+                                    <label for="priorityRange">5</label>
+                                    <input type="date" id="dueDate" name="dueDate" >
+                                
+                            </div>
+                            <div id="resetValues"><input id="resetValues" type='reset' value="Reset Values"></div>
+                                     
+                        </div> 
+                </form>
+            </div>
+        <div id="buttonContainer">
+                <div><button id="addButton" onclick="addToList()" class="button">Add to List</button></div>
+        </div>
+    </div>
+</body>
+</html>
