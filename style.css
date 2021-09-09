@@ -324,7 +324,7 @@ h2 {
     top: 0;
     left: 0;
     position: fixed;
-    background-color: black;
+    background-color: red;
     width: 100%;
     min-height: 65px;
     height: auto;
