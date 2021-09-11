@@ -11,8 +11,11 @@ span{
     width: 33%;
 }
 .navBarText{
+    font-family: 'Roboto Mono',monospace,sans-serif;
+    font-size: 25px;
     color: white;
 }
+
 .cardColTwo{
     padding: 5px;
     margin: auto;
@@ -29,10 +32,10 @@ span{
     display: inline-block;
 }
 .navBarText:hover{
-    text-decoration: line-through;
+    color: whitesmoke;
 }
 .navBarText:active{
-    color:orange;
+    color:white;
 }
 .navBarText:visited{
     color:grey;
@@ -243,6 +246,8 @@ h3 {
     font-family: sans-serif;
 }
 body{
+    display: flex;
+    flex-flow: column;
     background-color: whitesmoke;
     vertical-align: middle;
 }
