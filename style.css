@@ -15,6 +15,9 @@
 a{
     color: darkgrey;
 }
+a:hover{
+    color: darkgrey;
+}
 .navBarTextSpecial:link {
     color: darkgrey;
 }
