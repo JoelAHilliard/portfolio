@@ -12,6 +12,9 @@
     background-color: black;
     border-color: white;
 }
+a{
+    color: darkgrey;
+}
 .navBarTextSpecial:link {
     color: darkgrey;
 }
